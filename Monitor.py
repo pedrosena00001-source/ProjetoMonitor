@@ -30,7 +30,7 @@ def Log():
     if colect.returncode == 0:
         logger.debug('The Program Works Well')
     else:
-        logger.debug('The Program Dindt Works Well')
+        logger.warning('The Program Dindt Works Well')
         VerifyColect()
 
 def Main():
