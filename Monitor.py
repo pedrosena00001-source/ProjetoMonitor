@@ -29,7 +29,6 @@ def Log():
         logging.debug("Operation Didnt Works Well")
         VerifyColect()
 
-
 def Main():
     VerifyColect()
     ConvertText(text=colect)
