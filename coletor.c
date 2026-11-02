@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main () {
-    FILE *memory = fopen("/proc/meminfo", "r");
+    FILE *memory = fopen("/proc/mtminfo", "r");
     FILE *load = fopen("/proc/loadavg", "r");
     char buff_memory[200];
     char buff_load[200];
@@ -67,7 +67,7 @@ int main () {
         }
 
         //Print de Todas As Informações
-         printf("{\"mem_total_kb\": %lu, " "\"mem_available_lb\": %lu, " "\"load1\": %.2f}\n", MemTotal, MemAvailable, Load);
+         printf("{\"mem_total_kb\": %lu, " "\"mem_available_kb\": %lu, " "\"load1\": %.2f}\n", MemTotal, MemAvailable, Load);
 
         fclose(memory);
         fclose(load);
