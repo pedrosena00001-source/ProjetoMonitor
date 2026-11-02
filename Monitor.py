@@ -22,11 +22,15 @@ def ConvertText(text):
     print(f"Load: {Load}")
 
 def Log():
-    logging.basicConfig(filename="MonitorLog.log", filemode="w", format="%(asctime)s - %(levelname)s - %(message)s", level=logging.DEBUG)
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    fh = logging.FileHandler("Monitor.log")
+    fh.setLevel(logging.DEBUG)
+    logger.addHandler(fh)
     if colect.returncode == 0:
-        logging.debug("Operation Works Well")
+        logger.debug('The Program Works Well')
     else:
-        logging.debug("Operation Didnt Works Well")
+        logger.debug('The Program Dindt Works Well')
         VerifyColect()
 
 def Main():
